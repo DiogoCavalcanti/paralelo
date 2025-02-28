@@ -36,7 +36,8 @@ jobs:
     runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
-      matrix: ${{ fromJSON(needs.prepare.outputs.matrix) }}
+      matrix: 
+        containers: [1, 2, 3]
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@v4
